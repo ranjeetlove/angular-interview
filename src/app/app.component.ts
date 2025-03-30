@@ -13,4 +13,8 @@ import { HomeComponent } from './pages/home/home.component';
 })
 export class AppComponent {
   title = 'my-application';
+  
+  name:string='sunil';
+
+
 }

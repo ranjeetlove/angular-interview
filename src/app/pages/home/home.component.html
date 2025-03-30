@@ -1,3 +1,17 @@
-<div class="container-fluid main-body">
-    <h1>{{title}}</h1>
+<!-- *ngIf="changeTitle" -->
+<div class="container-fluid main-body">  
+
+    @let title = 1;
+    @let name = 2;
+    @let final = name + title;
+    @if(changeTitle){
+        <h1>{{final}}</h1>
+    }@else{
+        <h1>{{final}}</h1>
+    }
+
+    @for (user of users; track user.id) {
+        <p>{{user.name}}</p>
+    }
+
 </div>
