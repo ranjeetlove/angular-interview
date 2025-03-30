@@ -1,17 +1,41 @@
 <!-- *ngIf="changeTitle" -->
-<div class="container-fluid main-body">  
-
-    @let title = 1;
-    @let name = 2;
-    @let final = name + title;
-    @if(changeTitle){
-        <h1>{{final}}</h1>
-    }@else{
-        <h1>{{final}}</h1>
-    }
-
-    @for (user of users; track user.id) {
-        <p>{{user.name}}</p>
-    }
-
+<div class="container-fluid main-body">
+    <div class="row mt-5">
+        <div class="col-3">
+            <div (click)="cardClick('ranjeet')" class="card" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import {  } from 'stream';
 
 @Component({
   selector: 'app-home',
@@ -7,12 +8,16 @@ import { Component, Input } from '@angular/core';
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
-export class HomeComponent {
-  users = [
-    {id:1, name:'sunil'},
-    {id:2, name:'Ranjet'}
-  ];
-@Input() title!: string; // '!' means it will be initalise by the angular
-changeTitle:boolean=false;
+export class HomeComponent implements OnInit {
+  @Output() clickStatusEvent: EventEmitter<string> = new EventEmitter();
+  constructor() { }
 
+  onclicktext: string = '1st'
+
+  ngOnInit(): void { }
+
+  cardClick(data:string) {
+    console.log(data,'ranjeet');
+    this.clickStatusEvent.emit(data);
+  }
 }

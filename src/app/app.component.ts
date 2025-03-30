@@ -12,9 +12,24 @@ import { HomeComponent } from './pages/home/home.component';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'my-application';
-  
-  name:string='sunil';
+   menu:any=[
+    {
+      id:1,
+      name:'Home'
+    },
+    {
+      id:1,
+      name:'About'
+    },
+    {
+      id:1,
+      name:'Contact'
+    }
+  ]
 
+  receivedData: string = '';
 
+  handleData(data: string) {
+    this.receivedData = data;
+  }
 }

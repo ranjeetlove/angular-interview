@@ -1,4 +1,8 @@
-<app-header></app-header>
-<app-home [title]="title"></app-home>
+<app-header [menuItem]="menu"></app-header> <!-- chield comoponent -->
+
+<app-home (clickStatusEvent)="handleData($event)"></app-home>  <!-- chield comoponent -->
+
+<h2>click on card album {{receivedData}}</h2>
+
 <app-footer></app-footer>
 <router-outlet></router-outlet>
