@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AlbumService {
+  ApiPath:string = 'https://jsonplaceholder.typicode.com/';
   textname:string='';
-  constructor() { }
+  constructor(private httpClient: HttpClient) { }
   
   clickCardDetails(data:string){
     this.textname = data;
@@ -16,5 +18,8 @@ export class AlbumService {
     return this.textname;
   }
 
+  getAllAlbum(){
+    return this.httpClient.get(this.ApiPath+'posts');
+  }
 
 }
