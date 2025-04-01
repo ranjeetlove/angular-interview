@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import {  } from 'stream';
+import { AlbumService } from '../../services/album.service';
 
 @Component({
   selector: 'app-home',
@@ -10,14 +11,17 @@ import {  } from 'stream';
 })
 export class HomeComponent implements OnInit {
   @Output() clickStatusEvent: EventEmitter<string> = new EventEmitter();
-  constructor() { }
+  constructor(private albumService : AlbumService) { }
 
   onclicktext: string = '1st'
 
   ngOnInit(): void { }
 
   cardClick(data:string) {
-    console.log(data,'ranjeet');
     this.clickStatusEvent.emit(data);
+  }
+
+  nextCardClick(data:string){
+    this.albumService.clickCardDetails(data);
   }
 }
